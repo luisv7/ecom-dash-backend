@@ -18,7 +18,7 @@ mongoose.connect(DATABASE_URL);
 
 // Middleware
 app.use(cors());
-app.use(logger());
+app.use(logger('dev'));
 app.use(express.json());
 
 mongoose.connection
