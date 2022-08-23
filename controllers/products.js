@@ -13,4 +13,13 @@ router.get('/', async (req, res) => {
     }
 })
 
+// Create
+router.post('/', async (req, res) => {
+    try {
+        res.status(201).json(await Products.create(req.body))
+    } catch (error) {
+        res.status(400).json({message: 'bad request' })
+    }
+})
+
 module.exports = router;
