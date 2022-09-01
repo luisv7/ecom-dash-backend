@@ -27,7 +27,7 @@ mongoose.connection
 
 // Routes
 app.get('/', (req, res) => {
-    res.send('Hello')
+    res.send();
 });
 
 app.use('/api/products', products);
