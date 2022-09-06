@@ -1,10 +1,9 @@
 const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
-const products = new Schema({
+const publicProduct = new Schema({
     createdBy: String,
     name: String,
-    cost: Number,
     price: Number,
     stock: Number,
     sku: String,
@@ -16,4 +15,4 @@ const products = new Schema({
     brand: String,
 },{timestamps: true});
 
-module.exports = mongoose.model('Products', products);
+module.exports = mongoose.model('PublicProduct', publicProduct);
