@@ -7,7 +7,6 @@ const products = require('./controllers/products');
 const profiles = require('./controllers/profiles');
 const { getAuth } = require('firebase-admin/auth')
 const admin = require('firebase-admin');
-const serviceAccount = require('./firebase-private-key.json');
 // const publicProducts = require('./controllers/publicProducts');
 
 // Initialize App
@@ -26,7 +25,7 @@ admin.initializeApp({
     "type": "service_account",
     "project_id": "ecom-dash-53c9b",
     "private_key_id": PRIVATE_KEY_ID,
-    "private_key": PRIVATE_KEY,
+    "private_key": PRIVATE_KEY.replace(/\\n/g,'\n'),
     "client_email": "firebase-adminsdk-dropl@ecom-dash-53c9b.iam.gserviceaccount.com",
     "client_id": "101347785280572348973",
     "auth_uri": "https://accounts.google.com/o/oauth2/auth",
