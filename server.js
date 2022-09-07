@@ -17,10 +17,23 @@ const app = express();
 require('dotenv').config();
 const DATABASE_URL = process.env.DATABASE_URL;
 const PORT = process.env.PORT;
+const PRIVATE_KEY_ID = process.env.PRIVATE_KEY_ID;
+const PRIVATE_KEY = process.env.PRIVATE_KEY;
 
 // Firebase Configuration
 admin.initializeApp({
-  credential: admin.credential.cert(serviceAccount)
+  credential: admin.credential.cert({
+    "type": "service_account",
+    "project_id": "ecom-dash-53c9b",
+    "private_key_id": PRIVATE_KEY_ID,
+    "private_key": PRIVATE_KEY,
+    "client_email": "firebase-adminsdk-dropl@ecom-dash-53c9b.iam.gserviceaccount.com",
+    "client_id": "101347785280572348973",
+    "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+    "token_uri": "https://oauth2.googleapis.com/token",
+    "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+    "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/firebase-adminsdk-dropl%40ecom-dash-53c9b.iam.gserviceaccount.com"
+  })
 });
 
 // Connect to MongoDB using Mongoose
