@@ -69,7 +69,7 @@ mongoose.connection
     .on('error', (error) => console.log(error));
 
 // Routes
-app.get('/', (req, res) => {
+app.get('/admin', (req, res) => {
     res.send();
 });
 
