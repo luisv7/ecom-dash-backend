@@ -20,7 +20,7 @@
 ## Screenshots
 
 ## Getting Started
-Click [here](#)
+Click [here](https://sensational-blancmange-3f973b.netlify.app/)
 
 ## New Features
 - Google Firebase/Auth
