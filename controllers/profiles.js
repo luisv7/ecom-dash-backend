@@ -2,7 +2,7 @@ const Profiles = require('../models/profile');
 const router = require('express').Router();
 
 //Index
-router.get('/', async (req, res) => {
+router.get('/admin', async (req, res) => {
     try {
         res.status(200).json(await Profiles.find({}));
     } catch (error) {
@@ -11,7 +11,7 @@ router.get('/', async (req, res) => {
 })
 
 // Create
-router.post('/', async (req, res) => {
+router.post('/admin', async (req, res) => {
 
     // Create User
     req.body.uid = req.user.uid;
@@ -26,8 +26,8 @@ router.post('/', async (req, res) => {
 })
 
 // Update
-router.put('/', async (req, res) => {
-    
+router.put('/admin', async (req, res) => {
+
     console.log(req.body.uid);
 
     try {
