@@ -16,8 +16,6 @@ router.post('/', async (req, res) => {
     // Create User
     req.body.uid = req.user.uid;
 
-    console.log(req.body);
-
     try {
         res.status(201).json(await Profiles.create(req.body))
     } catch (error) {
