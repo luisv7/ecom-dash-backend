@@ -17,7 +17,7 @@ require('dotenv').config();
 const DATABASE_URL = process.env.DATABASE_URL;
 const PORT = process.env.PORT;
 const PRIVATE_KEY_ID = process.env.PRIVATE_KEY_ID;
-const PRIVATE_KEY = process.env.PRIVATE_KEY;
+const PRIVATE_KEY = process.env.PRIVATE_KEY || '';
 
 // Firebase Configuration
 admin.initializeApp({
